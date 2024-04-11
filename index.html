@@ -167,7 +167,7 @@
 <script>
     // Register service worker
     window.navigator.serviceWorker.register('./sw.js');
-    
+
     // Retrieve cookies
     var title2 = get_cookie("title2");
     var favicon = get_cookie("favicon");
@@ -182,8 +182,7 @@
 
     // Set default search engine to Google
     var browsertype = "google";
-    var searchengineURL = "https://www.google.com/search?q=";
-    searchengine.value = searchengineURL;
+    searchengine.value = "";
 
     // Set the browser type cookie
     document.cookie = "browser3=" + browsertype + "; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
@@ -211,7 +210,7 @@
 
     // Set default title if not already set
     if (title2 == null || title2 == undefined || title2 == "") {
-        title2 = "Cats Are Cool";
+        title2 = "DM Unbl0cker";
         document.cookie = "title2=" + title2 + "; expires=Thu, 18 Dec 9013 12:00:00 UTC; path=/";
         document.title = title2;
     } else {
