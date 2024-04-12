@@ -1,4 +1,63 @@
+<head><style>
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: none;
+  }
+  
+  .iframe-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
+  .iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+    z-index: 10000;
+    background-color: red;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+</style>
+
+<a href="#" id="open-wordle">Play Wordle</a>
+
+<div class="overlay" id="overlay">
+  <span class="close-btn" id="close-btn">&times;</span>
+  
+  <div class="iframe-container">
+    <iframe src="https://bosorioo.github.io/wordle-unlimited/" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+  document.getElementById('open-wordle').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('overlay').style.display = 'block';
+  });
+
+  document.getElementById('close-btn').addEventListener('click', function() {
+    document.getElementById('overlay').style.display = 'none';
+  });
+</script></head>
 <script src="/uv/uv.bundle.js" defer></script>
 <script src="/uv/uv.config.js" defer></script>
 <script src="/register-sw.js" defer></script>
